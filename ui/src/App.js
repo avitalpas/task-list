@@ -5,7 +5,7 @@ import axios from "axios";
 import { API_URL } from "./utils";
 
 function App() {
-  const [tasks, setTasks] = useState({});
+  const [tasks, setTasks] = useState([]);
 
   const fetchTasks = async () => {
     try {
@@ -22,6 +22,7 @@ function App() {
 
   return (
     <div className="App">
+      
       <AddTaskForm fetchTasks={fetchTasks} />
       {tasks.map((task) => (
         <Task task={task} key={task.id} fetchTasks={fetchTasks} />
