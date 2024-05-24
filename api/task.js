@@ -8,12 +8,12 @@ import {
 } from "@aws-sdk/lib-dynamodb";
 import crypto from "crypto"
 
-const client = new DynamoDBClient( {region:"us-west-1"});
-const docCliennt = DynamoDBDocumentClient.from(client)
+const client = new DynamoDBClient( {region:"ap-northeast-1"});
+const docClient = DynamoDBDocumentClient.from(client)
 
 // FETCH
 export const fetchTasks = async () => {
-    const command = new ScanCommand({
+        const command = new ScanCommand({
         ExpressionAttributeNames:{ "#name": "name"},
         ProjectionExpression: "id, #name, completed",
         TableName: "Tasks",
