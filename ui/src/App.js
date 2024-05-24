@@ -16,6 +16,7 @@ function App() {
     }
   };
 
+  // FETCH TASKS
   useEffect(() => {
     fetchTasks();
   }, []);
